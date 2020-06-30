@@ -1,4 +1,4 @@
-class HorizonatalLog 
+class HorizontalLog 
 {
     constructor(x,y,angle) 
     {
@@ -8,19 +8,19 @@ class HorizonatalLog
             'friction':1
         }
 
-        this.body = Bodies.Rectangle(x,y,200,20);
+        this.body = Bodies.rectangle(x,y,200,20);
         this.width = 200;
         this.height = 20;
-        Matter.body.setAngle(this.body,angle); 
+        Matter.Body.setAngle(this.body,angle); 
         World.add(world,this.body);
     }
 
-    diplay()
+    display()
     {
         var pos = this.body.position;
 
-        RectMode(CENTER);
+        rectMode(CENTER);
         fill("red");
-        rect(x,y,this.width,this.height);
+        rect(pos.x,pos.y,this.width,this.height);
     }
 }

@@ -16,7 +16,7 @@ class VerticalLog
     display(){
         var pos = this.body.position;
 
-        RectMode(CENTER);
+        rectMode(CENTER);
         fill("red");
         rect(pos.x,pos.y,this.width,this.height);
     }

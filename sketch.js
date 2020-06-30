@@ -41,14 +41,14 @@ function setup() {
 	vertical1 = new VerticalLog(290,650);
 	vertical2 = new VerticalLog(510,650);
 
-	horizontal = new HorizonatalLog(400,690);
+	horizontal = new HorizontalLog(400,690,PI/2);
+
+	Engine.run(world);
 }
 
 function draw() {
 	rectMode(CENTER);
 	background(0);
-
-	Engine.update();
 
 	packageSprite.x= packageBody.position.x 
 	packageSprite.y= packageBody.position.y 
@@ -62,9 +62,9 @@ function draw() {
 }
 
 function keyPressed() {
- if (keyCode === DOWN_ARROW) {
-    Matter.Body.setStatic(packageBody,false);
-  }
+	if (keyCode === DOWN_ARROW) {
+		Matter.Body.setStatic(packageBody,false);
+	}
 }
 
 
