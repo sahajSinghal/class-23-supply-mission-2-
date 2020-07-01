@@ -1,12 +1,12 @@
+var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
+var packageBody,ground
+var vertical1,vertical2;
+var horizontal;
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
-var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground;
-var vertical1, vertical2;
-var horizontal;
 
 function preload()
 {
@@ -35,28 +35,28 @@ function setup() {
 	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.7, isStatic:true});
 	World.add(world, packageBody);
 	
+	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
-	vertical1 = new VerticalLog(290,650);
-	vertical2 = new VerticalLog(510,650);
+	vertical1 = new Vertical(290,620);
+	vertical2 = new Vertical(510,620);
 
-	horizontal = new HorizontalLog(400,690,PI/2);
+	horizontal = new Horizontal(400,650);
 
-	Engine.run(world);
+	Engine.run(engine);
 }
+
 
 function draw() {
 	rectMode(CENTER);
 	background(0);
-
 	packageSprite.x= packageBody.position.x 
 	packageSprite.y= packageBody.position.y 
 
 	vertical1.display();
 	vertical2.display();	
-
-	horizontal.display();
+	horizontal.display();	
 
 	drawSprites();
 }

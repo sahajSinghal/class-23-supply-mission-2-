@@ -1,11 +1,12 @@
-class VerticalLog
+class Vertical
 {
     constructor(x,y)
     {
-        var options = {
-            isStatic:true,
-            'friction':1
+        var options = 
+        {
+            isStatic:true
         }
+
         this.body = Bodies.rectangle(x,y,20,100,options);
         this.width = 20;
         this.height = 100;
@@ -13,11 +14,12 @@ class VerticalLog
         World.add(world,this.body);
     }
 
-    display(){
+    display()
+    {
         var pos = this.body.position;
 
         rectMode(CENTER);
-        fill("red");
+        fill ("red");
         rect(pos.x,pos.y,this.width,this.height);
     }
 };
